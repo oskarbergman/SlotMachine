@@ -80,30 +80,30 @@ def deposit():
 
 def get_number_of_lines():
     while True:
-        lines = input("Ange antalet linjer att satsa på (1-" + str(MAX_LINES) +")? ")
+        lines = input("Ange antalet rader att satsa på (1-" + str(MAX_LINES) +")? ")
         if lines.isdigit():
             lines = int(lines)
             if 1 <= lines <= MAX_LINES:
                 break
             else:
-                print("Ange ett giltigt antal linjer att satsa på.")
+                print("Ange ett giltigt antal rader att satsa på.")
         else:
-            print("Var vänlig och skriv in antalet linjer med siffror.")
+            print("Var vänlig och skriv in antalet rader med siffror.")
     
     return lines
 
             
 def get_bet():
     while True:
-        amount = input("Hur mycket vill du betta? ")
+        amount = input("Hur mycket vill du satsa per rad? ")
         if amount.isdigit():
             amount = int(amount)
             if MIN_BET <=  amount <= MAX_BET:
                 break
             else:
-                print(f"Ditt bett måste vara mellan {MIN_BET} - {MAX_BET}.")
+                print(f"Din satsning måste vara mellan {MIN_BET} - {MAX_BET}.")
         else:
-            print("Var vänlig och skriv in ditt bett med siffror.")
+            print("Var vänlig och skriv in din satsning med siffror.")
             
     return amount
                 
@@ -114,7 +114,7 @@ def spin(balance):
         total_bet = bet * lines
         
         if total_bet > balance:
-            print(f"Du har inte tillräckligt med krediter. Just nu kan du betta {balance} kronor som mest.")
+            print(f"Du har inte tillräckligt med krediter. Just nu kan du satsa {balance} krediter som mest.")
         else: 
             break
         
